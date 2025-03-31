@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İlgi Zamanı 💖</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    #ilgiButonu {
+      display: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    #ilgiButonu:hover {
+      transform: scale(1.05);
+    }
+    #cikti {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #c71585;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>👋 Ekrana dokununca buton çıkacak!</h1>
+  <button id="ilgiButonu">💘 İlgi İstiyorum!</button>
+  <div id="cikti"></div>
+
+  <script>
+    const ilgiCumleleri = [
+      "Seninle ilgilenmek bana enerji veriyor! ⚡️",
+      "Sen bir tanesin, ilgin hep benden! 💕",
+      "Dünyanın en tatlısı ilgi istiyor, geldim! 🐣",
+      "Sana ilgi göstermek benim hobim oldu. 😍",
+      "Butona bastın, kalbimi kazandın. 🥹",
+      "Sadece seninle ilgilenmek istiyorum! 🎯",
+      "İlgi mi dedin? Hazırım! 🤓",
+      "Sana olan ilgim Wi-Fi gibi: her yerde çekiyor. 📶"
+    ];
+
+    const buton = document.getElementById("ilgiButonu");
+    const cikti = document.getElementById("cikti");
+
+    document.addEventListener("touchstart", () => {
+      buton.style.display = "inline-block";
+    }, { once: true });
+
+    buton.addEventListener("click", () => {
+      const rastgele = Math.floor(Math.random() * ilgiCumleleri.length);
+      cikti.textContent = ilgiCumleleri[rastgele];
+    });
+  </script>
+
+</body>
+</html>
